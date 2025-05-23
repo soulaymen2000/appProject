@@ -80,13 +80,11 @@ public class EventAdapter extends BaseAdapter {
                 context.startActivity(intent);
             });
         } else {
-            // For users: show event details on click
+            // For users: open event details page
             itemView.setOnClickListener(v -> {
-                android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(context);
-                builder.setTitle(event.title);
-                builder.setMessage("Description: " + event.description);
-                builder.setPositiveButton("OK", null);
-                builder.show();
+                Intent intent = new Intent(context, com.example.appprojet.activities.EventDetailsActivity.class);
+                intent.putExtra("event_id", event.id);
+                context.startActivity(intent);
             });
         }
 

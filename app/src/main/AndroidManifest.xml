@@ -31,6 +31,7 @@
         <activity android:name=".activities.AdminHomeActivity" />
         <activity android:name=".activities.UserHomeActivity" />
         <activity android:name=".activities.AddEditEventActivity" />
+        <activity android:name=".activities.EventDetailsActivity" />
 
     </application>
 
