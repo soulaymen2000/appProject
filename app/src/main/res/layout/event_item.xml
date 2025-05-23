@@ -21,4 +21,13 @@
         android:layout_height="wrap_content"
         android:text="Event Description"
         android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/btn_delete_event"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#D32F2F"
+        android:textColor="#fff"/>
 </LinearLayout>
