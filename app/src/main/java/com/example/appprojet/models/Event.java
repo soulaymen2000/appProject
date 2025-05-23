@@ -4,11 +4,20 @@ public class Event {
     public int id;
     public String title;
     public String description;
+    public String date;
+    public String imageUri;
 
-    public Event(int id, String title, String description) {
+    public Event(int id, String title, String description, String date, String imageUri) {
         this.id = id;
         this.title = title;
         this.description = description;
+        this.date = date;
+        this.imageUri = imageUri;
+    }
+
+    // For backward compatibility
+    public Event(int id, String title, String description) {
+        this(id, title, description, "", "");
     }
 
     public String getStatus() {
@@ -22,12 +31,15 @@ public class Event {
     }
 
     public String getDate() {
-        // Placeholder: return a date if available, or empty string
-        return "";
+        return date;
     }
 
     public String getTitle() {
         return title;
+    }
+
+    public String getImageUri() {
+        return imageUri;
     }
 
     public static java.util.List<Event> fetchAll(android.content.Context context) {

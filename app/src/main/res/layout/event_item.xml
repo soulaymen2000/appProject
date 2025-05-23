@@ -7,6 +7,14 @@
     android:background="#f0f0f0"
     android:layout_marginBottom="8dp">
 
+    <ImageView
+        android:id="@+id/event_image"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:scaleType="centerCrop"
+        android:src="@android:drawable/ic_menu_gallery"
+        android:layout_marginBottom="8dp" />
+
     <TextView
         android:id="@+id/event_title"
         android:layout_width="wrap_content"

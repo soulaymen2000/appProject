@@ -44,10 +44,23 @@ public class EventAdapter extends BaseAdapter {
         android.widget.TextView titleView = itemView.findViewById(R.id.event_title);
         android.widget.TextView descView = itemView.findViewById(R.id.event_description);
         android.widget.Button deleteBtn = itemView.findViewById(R.id.btn_delete_event);
+        android.widget.ImageView imageView = itemView.findViewById(R.id.event_image);
 
         Event event = eventList.get(i);
         titleView.setText(event.title);
         descView.setText(event.description);
+
+        // Load event image or show placeholder
+        if (event.imageUri != null && !event.imageUri.isEmpty()) {
+            try {
+                context.getContentResolver().openInputStream(android.net.Uri.parse(event.imageUri)).close();
+                imageView.setImageURI(android.net.Uri.parse(event.imageUri));
+            } catch (Exception e) {
+                imageView.setImageResource(android.R.drawable.ic_menu_gallery);
+            }
+        } else {
+            imageView.setImageResource(android.R.drawable.ic_menu_gallery);
+        }
 
         // Check if user is admin
         com.example.appprojet.utils.SessionManager sessionManager = new com.example.appprojet.utils.SessionManager(context);
